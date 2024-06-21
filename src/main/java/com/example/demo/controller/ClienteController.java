@@ -22,7 +22,7 @@ public class ClienteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Cliente>> buscarPorId(@PathVariable Long id){
-        return ResponseEntity.ok(clienteService.buscarPorId(id));
+        return ResponseEntity.ok(Optional.ofNullable(clienteService.buscarPorId(id)));
     }
 
     @PostMapping
